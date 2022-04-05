@@ -96,6 +96,6 @@ io.on("connection", (socket) => {
 });
 
 // On va demander au serveur http de répondre sur le port 3000
-http.listen(3000, () => {
+http.listen(80, () => {
     console.log("J'écoute le port 3000");
 });

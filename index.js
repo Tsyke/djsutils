@@ -1,7 +1,7 @@
 // On instancie express
 const express = require("express");
 const app = express();
-
+require('dotenv').config();
 // On charge "path"
 const path = require("path");
 
@@ -96,6 +96,8 @@ io.on("connection", (socket) => {
 });
 
 // On va demander au serveur http de répondre sur le port 3000
-http.listen(80, () => {
-    console.log("J'écoute le port 3000");
+const PORT = process.env.PORT || 3000;
+http.listen(PORT, err => {
+    if(err) throw err;
+    console.log("%c Server running", "color: green");
 });
